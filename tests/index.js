@@ -5,7 +5,6 @@ const myCommandHandler = new CommandHandler({
   commands: "./commands",
   events: "./events"
 }, {
-  /* DJS ClientOptions */ })
-
-myCommandHandler.client.login('TOKEN')
-myCommandHandler.launch()
+  /* DJS ClientOptions */
+})
+myCommandHandler.launch('TOKEN')
