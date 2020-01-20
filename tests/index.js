@@ -2,8 +2,8 @@ const CommandHandler = require('../src/Classes/CommandHandler')
 
 const myCommandHandler = new CommandHandler({
   /* CommandHandler Options */
-  commands: "./commands",
-  events: "./events"
+  commandsFolder: "./commands",
+  eventsFolder: "./events"
 }, {
   /* DJS ClientOptions */
 })
