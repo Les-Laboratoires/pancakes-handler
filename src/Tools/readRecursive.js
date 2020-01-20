@@ -14,11 +14,13 @@ module.exports = async function read(folder) {
       filesProcessed.children.push({
         type: "folder",
         name: file.name,
+        path: path.join(__dirname, path.normalize(folder), file.name),
         children: [await read(path.join(folder, file.name))]
       })
     } else {
       filesProcessed.children.push({
         type: "file",
+        path: path.join(__dirname, path.normalize(folder), file.name),
         name: file.name
       })
     }
