@@ -15,7 +15,7 @@ class CommandHandler {
     this.handleEvents(this._config.eventsFolder)
   }
   async handleCommands(folder) {
-    const files await readRecursive(folder)
+    const files = await readRecursive(folder)
     files.children.forEach(file => {
       if (file.type === "file") {
         if (!file.endsWith('.js')) {
