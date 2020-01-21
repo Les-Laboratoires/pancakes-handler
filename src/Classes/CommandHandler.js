@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 const readRecursive = require('../Tools/readRecursive.js')
+const CommandManager = require('./CommandManager.js')
+const EventManager = require('./EventManager.js')
 
 class CommandHandler {
 
