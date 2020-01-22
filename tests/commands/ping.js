@@ -22,7 +22,6 @@ module.exports = class PingCommand extends Command { // Extends of Command
         'preprocessors.custom.onlyModerator'
       ]
       // Custom args for Preprocessors
-
     })
   }
   run(client, message, args) { // Execute command
