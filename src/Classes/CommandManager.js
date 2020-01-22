@@ -1,6 +1,6 @@
 moudle.exports = class CommandManager extends Map {
   constructor(instance, ...args) {
-    super(...args);
+    super(...args);;
     this.instance = instance
   }
   addCommand(command) {
