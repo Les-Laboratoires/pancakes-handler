@@ -1,13 +1,16 @@
-name: Lint
+name: Auto_Linter
 
-on: [push]
+on: [pull_request, push]
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
+  linter:
+    name: linter
+    runs-on: ubuntu-18.04
     steps:
-      - run: npm install eslint
       - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
+      - uses: a-b-r-o-w-n/eslint-action@v1
         with:
-          files: src/
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          files: "src/**/*"
+          ignore: "src/some-file-to-ignore.js"
+          extensions: ".js,.ts"
