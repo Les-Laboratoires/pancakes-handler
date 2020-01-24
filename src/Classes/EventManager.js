@@ -3,15 +3,27 @@ moudle.exports = class CommandManager extends Map {
     super(...args);
     this.instance = instance
   }
+  async fetchCommands(folder) {
+    const files = await fs.readdir(folder)
+    files.forEach(file => {
+      if (!file.endsWith('.js')) {
+        return this.addEvent({
+          path: file.path,
+          event: require(file.path)
+        })
+        delete require.cache[file.path]
+      }
+    })
+  }
   addEvent(event) {
     const e = new event.event()
     if (!e.run) {
       return console.log(`[ERROR] Event ${event.path} doesnt have run method`)
     }
-    this.set(c.name, {
-      command: command.command,
-      path: command.path,
-      name: c.name
+    this.set(Date.now(), {
+      command: event.event,
+      path: event.path,
+      name: e.name
     })
   }
   getEventListeners(name) {

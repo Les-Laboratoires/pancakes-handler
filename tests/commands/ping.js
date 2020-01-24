@@ -12,19 +12,22 @@ module.exports = class PingCommand extends Command { // Extends of Command
         {
           name: "user", // Arg name
 
-          value: "preprocessors.custom.getUser", // Arg value checker (preprocessor)
+          value: "types.custom.user", // Arg value checker (preprocessor)
 
           required: true // Whether the arg is required or not
           // Custom args for preprocessor
         }
       ]
       preprocessors: [ // Load preprocessor only for this command
-        'preprocessors.custom.onlyModerator'
+        'preprocessors.custom.onlyModerator',
+        'preprocessors.custom.cooldown'
       ]
-      // Custom args for Preprocessors
+
+      cooldown: 5000 // Custom args for Preprocessors
+
     })
   }
   run(client, message, args) { // Execute command
-    message.reply('Pong !')
+    message.reply('Pong ! ' + args.user.id)
   }
 }

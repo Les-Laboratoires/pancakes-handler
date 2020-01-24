@@ -13,35 +13,9 @@ class CommandHandler {
   }
   launch(token) {
     this._client.login(token)
+    this._commands.fetchCommands(this._config.commandsFolder)
+    this._events.fetchEvents(this._config.eventsFolder)
     this.handleCommands(this._config.commandsFolder)
     this.handleEvents(this._config.eventsFolder)
-  }
-  async handleCommands(folder) {
-    const files = await readRecursive(folder)
-    files.children.forEach(file => {
-      if (file.type === "file") {
-        if (!file.endsWith('.js')) {
-          return this._commands.add({
-            path: file.path,
-            command: require(file.path)
-          })
-          delete require.cache[file.path]
-        }
-      } else {
-        this.handleCommands(file)
-      }
-    })
-  }
-  handleEvents(folder) {
-    const files = await fs.readdir(folder)
-    files.forEach(file => {
-      if (!file.endsWith('.js')) {
-        return this._events.add({
-          path: file.path,
-          event: require(file.path)
-        })
-        delete require.cache[file.path]
-      }
-    })
   }
 }
