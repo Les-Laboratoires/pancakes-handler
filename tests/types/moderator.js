@@ -1,7 +1,8 @@
 const Type = require('../../src/classes/Type.js')
 module.exports = new ModeratorType extends Type {
-  constructor() {
+  constructor(...args) {
     super({
+      ...args
       name: "moderator"
     })
   }

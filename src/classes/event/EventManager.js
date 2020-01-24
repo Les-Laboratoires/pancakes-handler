@@ -1,7 +1,7 @@
 moudle.exports = class CommandManager extends Map {
   constructor(instance, ...args) {
     super(...args);
-    this.instance = instance
+    this._instance = instance
   }
   async fetch(folder) {
     const files = await fs.readdir(folder)
@@ -16,7 +16,9 @@ moudle.exports = class CommandManager extends Map {
     })
   }
   addEvent(event) {
-    const e = new event.event()
+    const e = new event.event({
+      instance: this._instance
+    })
     if (!e.run) {
       return console.log(`[ERROR] Event ${event.path} doesnt have run method`)
     }

@@ -23,12 +23,13 @@ module.exports = class PingCommand extends Command { // Extends of Command
         'preprocessors.custom.onlyModerator',
         'preprocessors.custom.cooldown'
       ]
-
+      nsfwOnly: true,
+      onlyModerator: false,
       cooldown: 5000 // Custom args for Preprocessors
 
     })
   }
-  run(client, message, args) { // Execute command
+  run(message, args) { // Execute command
     message.reply('Pong ! ' + args.user.id)
   }
 }

@@ -22,7 +22,6 @@ module.exports = class CommandManager extends Map {
   }
   addCommand(command) {
     const c = new command.command({
-      filepath: command.path,
       instance: this._instance
     })
     if (this.get(c.props.name)) {
@@ -31,7 +30,7 @@ module.exports = class CommandManager extends Map {
     if (!c.run) {
       return console.log(`[ERROR] Command ${command.path} doesnt have run method`)
     }
-    this.set(c.name, {
+    this.set(c.props.name, {
       command: command.command,
       path: command.path,
       name: c.props.name
@@ -47,7 +46,7 @@ module.exports = class CommandManager extends Map {
   }
   reloadCommand(nameOrAlias) {
     const command = this.removeCommand(nameOrAlias)
-    delete require.cache[command.command.path]
+    delete require.cache[command.path]
     command.command = require(command.path)
     this.add(command)
   }
