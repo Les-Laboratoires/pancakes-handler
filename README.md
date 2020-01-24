@@ -1,5 +1,5 @@
 <div style="text-align:center"><img src="https://cdn.discordapp.com/attachments/609313381421154304/670222364579201034/pancakes-handler.png.png" /></div>
-
+# DO NOT USE PANCAKES HANDLER FOR NOW, IT IS NOT FINISHED. BUT YOU CAN HELP US BY MAKING PR AND ISSUES IF YOU WANT THE PROJECT TO BE DONE MORE FASTER.
 ### Table of Contents
 * [About](https://github.com/Les-Laboratoires-JS/command-handler/blob/master/README.md#About)
 * [Install](https://github.com/Les-Laboratoires-JS/command-handler/blob/master/README.md#Install)
