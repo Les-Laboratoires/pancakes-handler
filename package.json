@@ -1,5 +1,5 @@
 {
-  "name": "pancakes-handler",
+  "name": "@les-laboratoires-js/pancakes-handler",
   "version": "1.0.0",
   "description": "A complete command handler for discord.js",
   "main": "index.js",
