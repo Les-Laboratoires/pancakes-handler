@@ -1,1 +1,1 @@
-[![Tests](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FLes-Laboratoires-JS%2Fcommand-handler%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/Les-Laboratoires-JS/command-handler/goto?ref=master)
+<div style="text-align:center"><img src="https://cdn.discordapp.com/attachments/609313381421154304/670219356717711361/telechargement.png" /></div>
