@@ -1,6 +1,6 @@
 {
   "name": "@les-laboratoires-js/pancakes-handler",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A complete command handler for discord.js",
   "main": "index.js",
   "directories": {
