@@ -12,7 +12,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: '@les-laboratoires-js'
-      - run: npm publish pancakes-handler
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
 
@@ -26,6 +26,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@les-laboratoires-js'
       - run: npm ci
-      - run: npm publish pancakes-handler
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
