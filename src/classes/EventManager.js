@@ -3,7 +3,7 @@ moudle.exports = class CommandManager extends Map {
     super(...args);
     this.instance = instance
   }
-  async fetchCommands(folder) {
+  async fetch(folder) {
     const files = await fs.readdir(folder)
     files.forEach(file => {
       if (!file.endsWith('.js')) {
@@ -25,6 +25,7 @@ moudle.exports = class CommandManager extends Map {
       path: event.path,
       name: e.name
     })
+    this.instance._client.on(e.name, e.run.bind(null, this.instance._client));
   }
   getEventListeners(name) {
     return this.find(e => e.name === name)

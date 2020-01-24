@@ -1,10 +1,10 @@
-const readRecursive = require('../Tools/readRecursive.js')
+const readRecursive = require('../tools/readRecursive.js')
 module.exports = class CommandManager extends Map {
   constructor(instance, ...args) {
     super(...args);
-    this.instance = instance
+    this._instance = instance
   }
-  async fetchCommands(folder) {
+  async fetch(folder) {
     const files = await readRecursive(folder)
     files.children.forEach(file => {
       if (file.type === "file") {
@@ -16,12 +16,15 @@ module.exports = class CommandManager extends Map {
           delete require.cache[file.path]
         }
       } else {
-        this.fetchCommands(file)
+        this.fetch(file)
       }
     })
   }
   addCommand(command) {
-    const c = new command.command()
+    const c = new command.command({
+      filepath: command.path,
+      instance: this._instance
+    })
     if (this.get(c.props.name)) {
       return console.log(`[ERROR] Command ${command.path} name is already taken (${c.props.name})`)
     }

@@ -1,4 +1,4 @@
-const Type = require('../../src/Classes/Type.js')
+const Type = require('../../src/classes/Type.js')
 module.exports = new ModeratorType extends Type {
   constructor() {
     super({

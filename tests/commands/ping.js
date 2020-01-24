@@ -1,7 +1,8 @@
-const Command = require('../../src/Classes/Command.js')
+const Command = require('../../src/classes/Command.js')
 module.exports = class PingCommand extends Command { // Extends of Command
-  constructor() {
+  constructor(...args) {
     super({ // Passing command arguments
+      ...args, // Passing filepath, PancakesHandler instance
       name: "ping", // Set command's name
 
       aliases: ['pingu'], // Set command's aliases
@@ -12,7 +13,7 @@ module.exports = class PingCommand extends Command { // Extends of Command
         {
           name: "user", // Arg name
 
-          value: "types.custom.user", // Arg value checker (preprocessor)
+          value: "types.custom.moderator", // Arg value checker (preprocessor)
 
           required: true // Whether the arg is required or not
           // Custom args for preprocessor

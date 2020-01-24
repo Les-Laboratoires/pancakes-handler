@@ -1,4 +1,4 @@
-const Event = require('../../src/Classes/Event.js')
+const Event = require('../../src/classes/Event.js')
 module.exports = class MessageDeleteEvent extends Event {
   constructor() {
       super({
