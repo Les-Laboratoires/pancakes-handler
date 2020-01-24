@@ -1,5 +1,1 @@
-# Labs DJS Command Handler
-Les Laboratoires JS Command Handler, made for us by us.
-
-# Install
-TODO
+[![Tests](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FLes-Laboratoires-JS%2Fcommand-handler%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/Les-Laboratoires-JS/command-handler/goto?ref=master)
