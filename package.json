@@ -1,7 +1,7 @@
 {
-  "name": "labos-js-command-handler",
+  "name": "pancakes-handler",
   "version": "1.0.0",
-  "description": "Les Laboratoires JS Command Handler, made for us by us.",
+  "description": "A complete command handler for discord.js",
   "main": "index.js",
   "directories": {
     "test": "tests"
